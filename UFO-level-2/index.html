@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>UFO Finder</title>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">UFO Sightings<img class="nav-ufo" src="static/images/ufo.svg"></a>
+            </nav>
+        </div>
+        <div class="container_box">
+            <img src="static/images/nasa.jpg" class="featured_img" />
+            <div class="center_text">UFO Finder</div>
+        </div>
+        <div class="row">
+            <div class="column_search">
+                <div class="titles"><h4>Search</h2></div>
+                <div><hr></div>
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <ul class="list-group" id="filters">
+                              <li class="filter list-group-item">
+                                <div class="input-group mb-0">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" style="font-size: 12px;width: 70px;">Date</span>
+                                    </div>
+                                    <input class="form-control" id="datetime" type="text" placeholder="1/11/2011" style="font-size: 12px;">
+                                </div>
+                                
+                                <div class="input-group mb-0" id="hidden">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" style="font-size: 12px;width: 70px;">City</span>
+                                    </div>
+                                    <input class="form-control" id="city" type="text" style="font-size: 12px;">
+                                </div>
+                                <div class="input-group mb-0" id="hidden">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" style="font-size: 12px;width: 70px;">State</span>
+                                    </div>
+                                    <input class="form-control" id="state" type="text" style="font-size: 12px;">
+                                </div>
+                                <div class="input-group mb-0" id="hidden">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" style="font-size: 12px;width: 70px;">Country</span>
+                                    </div>
+                                    <input class="form-control" id="country" type="text" style="font-size: 12px;">
+                                </div>
+                                <div class="input-group mb-0" id="hidden">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" style="font-size: 12px;width: 70px;">Shape</span>
+                                    </div>
+                                    <input class="form-control" id="shape" type="text" style="font-size: 12px;">
+                                </div>
+                                <button type="button" class="toggle" id="toggle">&#8891;</button>
+                              </li>
+                            </ul>
+                            <input type="submit" style="display: none" />
+                            <button type="button" class="search" id="filter-btn">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="column_table">
+                <div class="titles"><h4>UFOs Found</h2></div>
+                <div><hr></div>
+                <div id="table-area" class="">
+                </div>
+                <div id="navi" class="row justify-content-center" style="text-align: center;">
+                    <span id="prv_button"><button type="button" id="prv">&lt;</button></span>
+                    <span id="page_number"></span>
+                    <span id="next_button"><button type="button" id="next">&gt;</button></span>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+        <script src="static/js/data.js"></script>
+        <script src="static/js/app.js"></script>
+    </body>
+</html>
