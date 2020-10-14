@@ -64,30 +64,37 @@ function table_view(){
 
         var prev_button = d3.selectAll("#prv");
         var next_button = d3.selectAll("#next");
-
+        if (page == 0)
+            prev_button.attr("class", "btn btn-outline-dark btn-sm disabled");
+        else
+            prev_button.attr("class", "btn btn-outline-dark btn-sm");
+        
+        if (page+1 == last_page)
+            next_button.attr("class", "btn btn-outline-dark btn-sm disabled");
+        else
+            next_button.attr("class", "btn btn-outline-dark btn-sm");
+        
         // If this page is not the first page, make the previous page button enable, and set the event listener for the previous page button
         // If this page is the first page, make the previous page button disable
-        if (page > 0){
-            prev_button.attr("class", "btn btn-outline-dark btn-sm");
-            d3.select("#prv").on("click", function(){
+        
+        d3.select("#prv").on("click", function(){
+            if (page > 0){
                 page--;
                 table_view();
-            });
-        }else{
-            prev_button.attr("class", "btn btn-outline-dark btn-sm disabled");
-        }
+            }
+        });
+        
 
         // If this page is not the last page, make the next page button enable, and set the event listener for the button
         // If this page is the last page, make the next page button disable
-        if (page+1 < last_page){
-            next_button.attr("class", "btn btn-outline-dark btn-sm");
-            d3.select("#next").on("click", function(){
+        
+        d3.select("#next").on("click", function(){
+            if (page+1 < last_page){
+                next_button.attr("class", "btn btn-outline-dark btn-sm");
                 page++;
                 table_view();
-            });
-        }else{
-            next_button.attr("class", "btn btn-outline-dark btn-sm disabled");
-        }
+            }
+        });   
     }
 }
 
